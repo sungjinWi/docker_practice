@@ -1,0 +1,15 @@
+mysql 실행은 docker exec -it some-mysql bash 에서 해야함
+    
+-d --detach : background에서 실행
+-p : port지정 localhost의 port : docker port
+
+docker run -d -p 3306:3306 \
+-e MYSQL_ALLOW_EMPTY_PASSWORD=true \
+--name mysql \
+-v /home/rkdlem94/mysql_data:/var/lib/mysql \
+mysql:latest
+
+docker exec -it mysql /bin/bash
+
+
+설명추가할것
